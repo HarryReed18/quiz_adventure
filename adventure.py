@@ -1,9 +1,27 @@
 # An adventure game
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
 from time import sleep
 health = 0
 enemy_health = 0
 karma = 0
-def into():
+def intro():
 
      
      global health
@@ -18,6 +36,43 @@ def room1():
     global health
     global enemy_health
     global karma
+
+    print("──────────────────────────────▓▓█───────")
+    print("────────────────────────────▒██▒▒█──────")
+    print("───────────────────────────█▓▓▓░▒▓▓─────")
+    print("─────────────────────────▒█▓▒█░▒▒▒█─────")
+    print("────────────────────────▒█▒▒▒█▒▒▒▒▓▒────")
+    print("─▓▓▒░──────────────────▓█▒▒▒▓██▓▒░▒█────")
+    print("─█▓▓██▓░──────────────▓█▒▒▒▒████▒▒▒█────")
+    print("─▓█▓▒▒▓██▓░──────────▒█▒▒▒▒▒██▓█▓░░▓▒───")
+    print("─▓▒▓▒▒▒▒▒▓█▓░──░▒▒▓▓██▒▒▒▒▒▒█████▒▒▒▓───")
+    print("─▓░█▒▒▒▒▒▒▒▓▓█▓█▓▓▓▓▒▒▒▒▒▒▒▒██▓██▒░▒█───")
+    print("─▓░▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓████▒▒▒█───")
+    print("─▓░▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▒▒▒▒▒▒▓██░░░█───")
+    print("─▓░▓███▒▒▒▒▒▒▒▒▒▒▒▓█▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▓▓──")
+    print("─▒▒▒██▓▒▓█▓▒▒▒▒▒▒▒▓▒▒▒▒▒▒▓▓▓▒▒▒▒▒▒▒▓▒█──")
+    print("──▓▒█▓▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▓█▓▓▓▓█▓▒▒▒▒▒▒▒▓▒─")
+    print("──▓▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓──────▓█▓▒▒▒▒▒▓█─")
+    print("──▒▒▓▒▒▒▓▓▓▒▒▒▒▒▒▒▒▒▓▓───░▓▓───█▓▒▒▒▒▒█─")
+    print("───█▒▒▓▓▓▒▒▓▓▒▒▒▒▒▒▓▓───█████▓──█▓▒▒▒▒▓▒")
+    print("───▓▓█▒─────▒▓▒▒▒▒▒█───░██████──░█▒▒▒▒▓▓")
+    print("───▓█▒──▒███─▒▓▒▒▒▒█────██████───▓▒▒▒▒▒▓")
+    print("───██───█████─█▒▒▒▒█─────███▓────▓▓▒▒▒▒▓")
+    print("───█▓───█████─▒▓▒▒▒█─────────────█▓▓▓▒▒▓")
+    print("───█▓───░███──░▓▒▒▒▓█──────────░█▓▒▒▒▓▒▓")
+    print("───██─────────▒▓▒▒▒▒▓▓──────░▒▓█▓────░▓▓")
+    print("───▓█░────────█▓██▓▒▒▓█▓▓▓▓██▓▓▒▓▒░░▒▓▒▓")
+    print("───▒██░──────▓▒███▓▒▒▒▒▓▓▓▓▒▒▒▒▒▒▓▓▓▓▒▓─")
+    print("────█▓█▓▓▒▒▓█▓▒░██▒▒▓▓█▓▒▒▒▒▒▒▒▒▒▒▒▒▓▓█▒")
+    print("────▓─░▓▓▓▓▓▒▓▓▓▓▒▓▓▓▒▓▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓")
+    print("────▒▒▒▓▒▒▒▒▒▒▓█░─░░░─▓▓▒▒▒▒▒▒▒▒▒▒▒▓██▓▒")
+    print("─────█▓▒▒▒▒▒▒▒▒▓▓─░░░─▓▓▒▒▒▒▒▒▒▒▒▓▓▓▒▒▓▒")
+    print("──────██▓▓▒▒▒▒▒▒█▒░░░░█▒▒▒▒▒▒▒▒▓█▓▓▒▒▒▒▒")
+    print("─────░─▒██▓▓▒▒▒▒▒█▓▒▒▓▒▒▒▒▒▒▓███▓▒▒▒▒▒▓▓")
+    print("──────────░▒▓▓▓▓▒▒▓▓▓▓▓▓████▓▓█▒▒▒▒▒▓▓█░")
+    sleep(5)
+
+
 
     print("You wake up, lost and alone in a dark moving prison with no memory of how you got there")
     sleep(2)
@@ -50,7 +105,8 @@ def room1():
         sleep(1)
         print("You curl up in a ball in the center of the floor and cry as the creature cries out in agony as it slowly burns to death")
         print("as it burns you cant help but begin to feel hungry...")
-        print(karma = karma - 5)
+        karma = karma - 5
+        print("Karma: ", karma )
         sleep(5)
 
         room2()
@@ -60,6 +116,16 @@ def room2():
     global health
     global enemy_health
     global karma
+
+    print("Hours pass...")
+    sleep(2)
+    print("A sudden jolt of movement startles you as the moving cell accelerates towards the top of nothing...")
+    sleep(1)
+    print("You have little time until the cell is crushed on the top of the shaft")
+    print("A. Lie on the floor and hope you dont get crushed")
+    print("B. Tear a gurder from the cell and jam it between the walls of the shaft and the cell to slow it down")
+    print("C.")
+          
     
     
     
@@ -77,3 +143,8 @@ def room2():
 # run your code.
 if __name__ == "__main__":
     room1()
+
+
+
+
+
