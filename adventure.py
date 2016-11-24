@@ -1,152 +1,202 @@
 # An adventure game
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
 from random import randint
 from time import sleep
-health = 20
-enemy_health = 0
-karma = 0
-def intro():
 
-     
-     global health
-     global enemy_health
-     global karma
+player_damage_with_stick = randint(3, 10)
+player_damage = randint(1, 8)
 
-def status_bar():
-     global health, karma
+enemy_damage = randint(1, 5)
+stick = 0
 
-     print(""*5)
-     print("===================================")
-     print("   HP", health,"  Karma", karma)
-     print("===================================")
-     print("")
-     
-def remove_HP(hp, prompt):
-     global health
 
-     health = health - hp
-     print("You lose", hp, "health")
-     print(prompt)
-     if health <= 0:
-          print("Game Over")
-          quit()
-    
-   
+
+def combat_screen():
+
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("                                  Fighting...                                ")
+            print("     YOU MUST HIT ABOVE A FIVE TO KILL THE SPIDER       ")
+            print("   IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE    ")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+def game_over():
+            print("~~~~~~~~~~~~") 
+            print("  GAME  OVER   ")
+            print("~~~~~~~~~~~~")
+
+def combat_code():
+                print("You only have a stick to fight with!")
+                print("You swiftly jab the spider in one of it's eye's to gain an advantage")
+                sleep(2)
+                combat_screen()            
+                sleep(2)
+
+                print("You hit a", player_damage_with_stick)
+                sleep(1)
+                print("The spider hits a", enemy_damage)
+
+                if player_damage_with_stick < enemy_damage:
+                    print("The spider has dealt more damage than you!")
+                    print("You fall to the floor in a dramatic scene of pain and die")
+                    print("The spider lays it's eggs in your corpse")
+
+                    game_over()
+
+                elif player_damage_with_stick < 5:
+                    print("You didnt deal enough damage to kill the spider, but manage to escape")
+
+                else:
+                    print("Yoy have killed the spider!")
+
+
+
+
+
+
+
+
+            
 
 def room1():
+        global player_damage, enemy_damage,  stick
 
-    
-    global health
-    global enemy_health
-    global karma
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(" Welcome to Lost Cavern of Secrets! ")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~")
 
-    
+        sleep(3)
 
-    status_bar()
-
-
-
-    print("You wake up, lost and alone in a dark moving prison with no memory of how you got there")
-    sleep(2)
-    print("your memory is blurry and the only thing you remember is a woman screaming at you as you're being pulled away")
-    sleep(1)
-    print("Wait...")
-    sleep(3)
-    print("Who was it")
-
-    print("Contemplating your life and waiting for the prison to stop,  you suddenly hear a horrific roar emerge from underneath a dusty grey cloth") 
-    print("What do you do?")
-    sleep(1)
-    print("A, Quench your curiosity and remove the cloth")
-    sleep(1)
-    print("B. Be a man and kill the beast!!")
-    sleep(1)
-    answer = input("???????- ")
-
-    if answer.lower() == "a":
-        print("You lift the cloth to find that the source of the sound is mearly a creature just as terrified as  you and is squealing in terror")
-        sleep(2)
-        print("You feel symapthy for the creature and calm it down")
+        print("You enter a dark cavern out of curiosity, it is ominus and mysterious.")
         sleep(1)
-        print("After looking around for a short while you find some stale bread and share it with the creature")
-        karma = karma + 10
-        print("Karma: ", karma )
-
-    elif answer.lower() == "b":
-        print("You see a lighter in the corner of your eye and set the suprisingly flamable cloth on fire")
+        print("At the enterance of the cavern you can make out a wooden stick")
         sleep(1)
-        print("You curl up in a ball in the center of the floor and cry as the creature cries out in agony as it slowly burns to death")
-        print("as it burns you cant help but begin to feel hungry...")
-        karma = karma - 5
-        print("Karma: ", karma )
-        sleep(5)
+        answer = input("Do you take it? [y/n]:")
+#stick taken
+        if answer.lower() == "y":
+            print("You have taken the stick!")
+            print("You stuff it in your backpack for safe keeping")
+            sleep(1)
+            stick = stick + 1
+            print("You now have ", stick, "sticks")
+            
+#stick not taken
+        elif answer.lower() == "n":
+            print("You thought it best to leave the majestic stick and enter the cave without a second thought")
+            print("What could possibly go wrong?")
+
+            sleep(2)
 
         room2()
 
+            
 def room2():
-    
-    global health
-    global enemy_health
-    global karma
+        global player_damage, enemy_damage, stick
 
-    status_bar()
+        print("As you proceed deeper into the cave, you see a small object emitting light")
+        answer = input("Approach the object? [y/n]:")
+#approach Spider
+        if answer.lower() == "y":
+            print("You cautiously sneak towards the object...")
+            sleep(2)
+            print("As you draw closer, you begin to realise that the object is an eye!")
+            sleep(1)
+            print("You start to panic and breath heavily as the object sprouts more and more eyes!")
+            print("2")
+            print("4")
+            print("8")
+            sleep(1)
+            print("It's a Spider!!")
+            sleep(1)
+            print("There is little time")
+            answer = input("Do you fight it? [y/n]:")
+#fight spider
+        if answer.lower() == "y":
+            #with stick
+            
+            if stick == 1:
+                print("You only have a stick to fight with!")
+                print("You swiftly jab the spider in one of it's eye's to gain an advantage")
+                sleep(2)
+                combat_screen()            
+                sleep(2)
 
-    print("Hours pass...")
-    sleep(2)
-    print("A sudden jolt of movement startles you as the moving cell accelerates towards the top of nothing...")
-    sleep(1)
-    print("You have little time until the cell is crushed on the top of the shaft")
-    print("A. Lie on the floor and hope you dont get crushed")
-    print("B. Tear a gurder from the cell and jam it between the walls of the shaft and the cell to slow it down")
-    print("C. Use a spell to stop the cell")
-    answer = input("Quickly you dont have much time- ")
+                print("You hit a", player_damage_with_stick)
+                sleep(1)
+                print("The spider hits a", enemy_damage)
 
-    if answer.lower() == "a":
-        print("You lie on the floor waiting for the cell to be crushed at the top of the shaft")
+                if player_damage_with_stick < enemy_damage:
+                    print("The spider has dealt more damage than you!")
+                    print("You fall to the floor in a dramatic scene of pain and die")
+                    print("The spider lays it's eggs in your corpse")
+
+                    game_over()
+
+                elif player_damage_with_stick < 5:
+                    print("You didnt deal enough damage to kill the spider, but manage to escape")
+
+                else:
+                    print("Yoy have killed the spider!")
+#without stick
+        elif:
+            print("You dont have anything to fight with!")
+            sleep(2)
+
+            
+            combat_screen()
+
+            sleep(2)
+            print("You hit for", player_damage)
+            print("The spider hits for", enemy_damage)
+            sleep(1)
+
+            combat_code()
+
+
+        #dont fight the spider
+        else:
+            print("You turn away from the spider and run as fast as you can")
+            sleep(1)
+            print("As you get closer to the exit of the cavern everything begins to crumble around you")
+            sleep(2)
+            print("The walls fall away and the floor disappears")
+            sleep(3)
+            print("Infront of you are two red velvet arm chairs infront of a fireplace")
+            sleep(2)
+            print("You approach the chairs and realise there is a man with a long black coat and sunglasses on sitting in one")
+            sleep(1)
+            print("He turns to face you and asks")
+            sleep(3)
+            print("This is your last chance")
+            print("After this there is no turning back")
+            print("The red pill")
+            sleep(1)
+            print("or")
+            sleep(1)
+            print("The blue pill")
+            sleep(4)
+
+        game_over()
+
         sleep(2)
-        print("You can see the top now, but only just")
-        sleep(1)
-        print("You can make out a sliver a light piercing through the centre of the ceiling")
-        sleep(1)
-        print("As you get closer to the top you notice the sliver of light is getting bigger and bigger")
-        print("It's an opening!")
-        sleep(1)
-        print("when the cell reaches the top it flighs off of its supports into the air")
 
-    elif answer.lower() == "b":
-          print("You seriosly think you're that strong?")
+        quit()
+            
+       
+            
+            
+                    
 
-          remove_HP(1,)
+                    
+
+                
+                
+            
+            
+        
+        
+
+
+        
           
-          sleep(2)
-          print("The gods respect your courage")
-          karma = karma + 5
-          print("karma:" ,karma)
-
-    elif answer. lower() == "c":
-          print("...")
-          sleep(2)
-          print("I want to make this perfectly clear")
-          sleep(2)
-          print("Magic")
-          sleep(1)
-          print("IS NOT IN THIS GAME")
 
           
 
