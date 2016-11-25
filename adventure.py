@@ -12,11 +12,11 @@ stick = 0
 
 def combat_screen():
 
-            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("                                  Fighting...                                ")
             print("     YOU MUST HIT ABOVE A FIVE TO KILL THE SPIDER       ")
             print("   IF THE SPIDER HITS HIGHER THAN YOU, YOU WILL DIE    ")
-            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 def game_over():
             print("~~~~~~~~~~~~") 
@@ -60,7 +60,7 @@ def room1():
         global player_damage, enemy_damage,  stick
 
         print("~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(" Welcome to Lost Cavern of Secrets! ")
+        print("  Welcome to Lost Cavern of Secrets! ")
         print("~~~~~~~~~~~~~~~~~~~~~~~~~")
 
         sleep(3)
@@ -108,7 +108,7 @@ def room2():
             sleep(1)
             print("There is little time")
             answer = input("Do you fight it? [y/n]:")
-#fight spider
+        #fight spider
         if answer.lower() == "y":
             #with stick
             
@@ -135,8 +135,8 @@ def room2():
 
                 else:
                     print("Yoy have killed the spider!")
-#without stick
-        elif:
+        #without stick
+        elif stick == 0:
             print("You dont have anything to fight with!")
             sleep(2)
 
